@@ -1,9 +1,9 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/Assets/AssetStoreTools*
+/ProjectVrij2_2018_Unity/[Ll]ibrary/
+/ProjectVrij2_2018_Unity/[Tt]emp/
+/ProjectVrij2_2018_Unity/[Oo]bj/
+/ProjectVrij2_2018_Unity/[Bb]uild/
+/ProjectVrij2_2018_Unity/[Bb]uilds/
+/ProjectVrij2_2018_Unity/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/
