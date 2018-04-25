@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerStats : MonoBehaviour {
+public class PlayerStats : HealthBasedDamagable_healthContainer {
 
     private static PlayerStats _this = null;
 
+    /*
     [SerializeField] private float  health = 100,
                                     maxHealth = 100;
     [SerializeField] private UnityEvent onDeath = new UnityEvent();
+    */
 
     [SerializeField] private float  stamina = 100,
                                     maxStamina = 100;
@@ -18,6 +20,7 @@ public class PlayerStats : MonoBehaviour {
         _this = this;
     }
 
+    /*
     public static void TakeDamage(float dmg){
         if(_this.health > 0){ 
             _this.health -= dmg;
@@ -26,5 +29,6 @@ public class PlayerStats : MonoBehaviour {
             }
         }
     }
+    */
 
 }
