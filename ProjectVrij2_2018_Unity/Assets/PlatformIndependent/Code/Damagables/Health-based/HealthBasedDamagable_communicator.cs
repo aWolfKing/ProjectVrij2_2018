@@ -13,7 +13,8 @@ public class HealthBasedDamagable_communicator : MonoBehaviour {
 
     public void TakeHit(){
         if(!IsImmumeTo(Damager.Current.GetCause())){ //(Damager.Current.GetCause() & immumeTo) != immumeTo){
-            healthContainer.TakeDamage(Damager.Current.Damage * damageMultiplier);
+            //healthContainer.TakeDamage(Damager.Current.Damage * damageMultiplier);
+            Damager.Current.StoreDamageDone(healthContainer, Damager.Current.Damage * this.damageMultiplier);
         }
     }
 

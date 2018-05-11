@@ -20,6 +20,7 @@ public class CameraControl : MonoBehaviour {
 
     [SerializeField] private new Camera camera = null;
     [SerializeField] private Transform cameraRoot = null;
+    [SerializeField] private Transform cameraRootGuide = null;
     [SerializeField] private float  sensitivityX = 80,
                                     sensitivityY = 80,
                                     cameraMinAngle = -70,
@@ -63,6 +64,10 @@ public class CameraControl : MonoBehaviour {
         cameraRoot.rotation = rotation;
     }
 
+
+    private void FixedUpdate() {
+        cameraRoot.transform.position = cameraRootGuide.position;
+    }
 
 
 }

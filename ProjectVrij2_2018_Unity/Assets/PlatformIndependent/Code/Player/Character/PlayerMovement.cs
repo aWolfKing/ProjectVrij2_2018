@@ -76,6 +76,10 @@ public class PlayerMovement : MonoBehaviour {
         CollisionFlags flags = characterController.Move(position - characterController.transform.position);
         position = characterController.transform.position;
         bodyDirection = movementVector.normalized;
+
+        if(bodyDirection != Vector3.zero){ 
+            characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation,Quaternion.LookRotation(bodyDirection, Vector3.up), 360f * Time.fixedDeltaTime);
+        }
     }
 
 
