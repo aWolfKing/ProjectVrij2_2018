@@ -69,5 +69,4 @@ public class CameraControl : MonoBehaviour {
         cameraRoot.transform.position = cameraRootGuide.position;
     }
 
-
 }
