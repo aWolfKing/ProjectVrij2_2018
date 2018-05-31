@@ -4,7 +4,11 @@
 /ProjectVrij2_2018_Unity/[Bb]uild/
 /ProjectVrij2_2018_Unity/[Bb]uilds/
 /ProjectVrij2_2018_Unity/Assets/AssetStoreTools*
+<<<<<<< HEAD
 /ProjectVrij2_2018_Unity/Assets\AparteMapjes\Marthe\Level_Blockout\PrVrMap_Building_Blocks
+=======
+/ProjectVrij2_2018_Unity/Assets/AparteMapjes/Marthe/Level_Blockout/PrVrMap_Building_Blocks/
+>>>>>>> 2a81f3ed4a3c2e192a5ea62ea2ae0bfb990b2845
 
 # Visual Studio 2015 cache directory
 /.vs/

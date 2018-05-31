@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d6cd0e71f8c727e4aa52302a1c664c14
 timeCreated: 1527756820
+=======
+guid: f956b88d699c3ac49a824e485fff83c6
+timeCreated: 1526295161
+>>>>>>> 2a81f3ed4a3c2e192a5ea62ea2ae0bfb990b2845
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -33,7 +38,10 @@ ModelImporter:
     400022: stone2_low
     400024: stone3_low
     400026: wallpart_low
+<<<<<<< HEAD
     2100000: default
+=======
+>>>>>>> 2a81f3ed4a3c2e192a5ea62ea2ae0bfb990b2845
     2300000: fenceillartop_low
     2300002: fencepillar_low
     2300004: fencepillartop2_low
@@ -74,12 +82,25 @@ ModelImporter:
     4300022: floortile2_low
     4300024: floortile1_low
     9500000: //RootNode
+<<<<<<< HEAD
   externalObjects: {}
+=======
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default
+    second: {fileID: 2100000, guid: b31dbbd8038dffc49b6c103e1b68d602, type: 2}
+>>>>>>> 2a81f3ed4a3c2e192a5ea62ea2ae0bfb990b2845
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+<<<<<<< HEAD
     materialLocation: 1
+=======
+    materialLocation: 0
+>>>>>>> 2a81f3ed4a3c2e192a5ea62ea2ae0bfb990b2845
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -117,8 +138,11 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+<<<<<<< HEAD
     preserveHierarchy: 0
     indexFormat: 0
+=======
+>>>>>>> 2a81f3ed4a3c2e192a5ea62ea2ae0bfb990b2845
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

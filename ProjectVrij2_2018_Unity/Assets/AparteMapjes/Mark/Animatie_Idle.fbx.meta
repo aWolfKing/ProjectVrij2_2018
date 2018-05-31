@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: da34164b144b9a84ebccb3f54fc79554
 timeCreated: 1527768310
+=======
+guid: 23a92195d2616ae45881e279bf45568c
+timeCreated: 1527769981
+>>>>>>> 2a81f3ed4a3c2e192a5ea62ea2ae0bfb990b2845
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -228,6 +233,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
+<<<<<<< HEAD
     clipAnimations:
     - serializedVersion: 16
       name: Take 001
@@ -257,6 +263,9 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+=======
+    clipAnimations: []
+>>>>>>> 2a81f3ed4a3c2e192a5ea62ea2ae0bfb990b2845
     isReadable: 1
   meshes:
     lODScreenPercentages: []
