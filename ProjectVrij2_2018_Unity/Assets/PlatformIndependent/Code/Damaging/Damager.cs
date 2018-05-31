@@ -74,6 +74,7 @@ public class Damager {
         }
     }
 
+
     /// <summary>
     /// Inflicts the stored damage and clears that list.
     /// </summary>
