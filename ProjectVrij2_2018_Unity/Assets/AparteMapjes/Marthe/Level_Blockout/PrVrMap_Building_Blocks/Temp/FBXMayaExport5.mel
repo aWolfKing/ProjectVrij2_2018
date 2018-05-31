@@ -1,0 +1,22 @@
+print "Starting maya loading and fbx conversion \n";
+	
+if (`file -q -exists "D:/Studiedingen/Project Vrij 2/PrVrMap_Building_Blocks/Assets/Map Exports/Mine_Entrance.mb"`)
+{		
+	file -o "D:/Studiedingen/Project Vrij 2/PrVrMap_Building_Blocks/Assets/Map Exports/Mine_Entrance.mb";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "D:/Studiedingen/Project Vrij 2/PrVrMap_Building_Blocks/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+sysFile -delete "D:/Studiedingen/Project Vrij 2/PrVrMap_Building_Blocks/Temp/CommandPipe";
+
+$donepipeKill = `fopen "D:/Studiedingen/Project Vrij 2/PrVrMap_Building_Blocks/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;
