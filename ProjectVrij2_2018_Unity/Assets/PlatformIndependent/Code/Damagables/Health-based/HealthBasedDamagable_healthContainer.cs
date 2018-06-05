@@ -9,12 +9,26 @@ public class HealthBasedDamagable_healthContainer : MonoBehaviour {
 
     [SerializeField] private UnityEngine.Events.UnityEvent onDeath = new UnityEngine.Events.UnityEvent();
 
-    public void TakeDamage(float amount){
-        if(health > 0){ 
-            health -= amount;
+
+    public float CurrentHealth{
+        get{
+            return this.health;
         }
-        if(health <= 0){
-            onDeath.Invoke();
+    }
+
+    public float MaxHealth{
+        get{
+            return this.maxHealth;
+        }
+    }
+
+
+    public void TakeDamage(float amount){
+        if(this.health > 0){ 
+            this.health -= amount;
+        }
+        if(this.health <= 0){
+            this.onDeath.Invoke();
         }
     }
 
