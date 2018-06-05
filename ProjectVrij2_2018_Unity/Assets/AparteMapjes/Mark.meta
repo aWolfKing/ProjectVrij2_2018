@@ -1,8 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:ProjectVrij2_2018_Unity/Assets/AparteMapjes/Mark.meta
+guid: 4604e524c8543ae41b419b696691652d
+folderAsset: yes
+=======
 guid: e489cec3e9c3f5848be6e7a50b1a46c0
 folderAsset: yes
 timeCreated: 1526293504
 licenseType: Free
+>>>>>>> 4137630a7476c474ca2eb5029d80792f1c5ca8d8:ProjectVrij2_2018_Unity/Assets/AparteMapjes/Mark.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

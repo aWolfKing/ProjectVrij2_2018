@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 65294c1d54a260b498a75a6fd7a98722
 timeCreated: 1528194879
 licenseType: Free
+=======
+guid: e247eac1340c93343a8ac35e593fbe70
+>>>>>>> 7034bb28e50d25afff5f0e77459e504589ad4528
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -221,6 +225,10 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+<<<<<<< HEAD
+=======
+    importConstraints: 0
+>>>>>>> 7034bb28e50d25afff5f0e77459e504589ad4528
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -228,6 +236,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
+<<<<<<< HEAD
     clipAnimations:
     - serializedVersion: 16
       name: Take 001
@@ -257,6 +266,9 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+=======
+    clipAnimations: []
+>>>>>>> 7034bb28e50d25afff5f0e77459e504589ad4528
     isReadable: 1
   meshes:
     lODScreenPercentages: []

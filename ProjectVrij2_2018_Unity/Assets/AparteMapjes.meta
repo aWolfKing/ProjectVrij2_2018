@@ -1,8 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:ProjectVrij2_2018_Unity/Assets/AparteMapjes.meta
+guid: fff647ec74fbb8e42bdf45cd100dc339
+folderAsset: yes
+=======
 guid: 83868bc648e0b7e4a99951903e1a788a
 folderAsset: yes
 timeCreated: 1526293504
 licenseType: Free
+>>>>>>> 4137630a7476c474ca2eb5029d80792f1c5ca8d8:ProjectVrij2_2018_Unity/Assets/AparteMapjes.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
