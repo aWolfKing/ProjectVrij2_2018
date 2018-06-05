@@ -25,7 +25,8 @@ public class Damager {
         Explosive = Environment << 1, 
         Melee = Explosive << 1,
         Ranged = Melee << 1,
-        Other = Ranged << 1
+        Interaction = Ranged << 1,
+        Other = Interaction << 1,
     }
 
 

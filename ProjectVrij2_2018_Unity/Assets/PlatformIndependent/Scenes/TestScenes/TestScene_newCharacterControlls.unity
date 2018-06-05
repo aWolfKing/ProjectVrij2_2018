@@ -668,6 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca31f039473f36241aeaa4b829b4ed47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackNode: {fileID: 0}
+  shriekNode: {fileID: 0}
 --- !u!4 &2005871684
 Transform:
   m_ObjectHideFlags: 0
@@ -721,3 +723,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c6da9f90cc70843a3b365633c6ecef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackNode: {fileID: 0}
