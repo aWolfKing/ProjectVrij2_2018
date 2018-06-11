@@ -11,11 +11,12 @@ public class AIB_AmbushZoneTest : MonobehaviourAIBehaviourNode {
 
     public override IEnumerator ExecuteNode(MonobehaviourAIBehaviourGraph caller) {
 
-        if(this.PlayerIsInAmbushZone() || this.PlayerIsInLineOfSight()){
+        if(this.PlayerIsInAmbushZone() || this.PlayerIsInLineOfSight()) {
             yield return this.attackNode.ExecuteNode(caller);
         }
-
-        caller.MarkAsLastNodeCall(null);
+        else {
+            caller.MarkAsLastNodeCall(null);
+        }
         yield return null;
     }
 

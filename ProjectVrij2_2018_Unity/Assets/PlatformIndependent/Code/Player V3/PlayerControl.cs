@@ -16,6 +16,9 @@ public class PlayerControl : MonoBehaviour {
     [SerializeField] private float  movementDeadzone = 0.15f,
                                     cameraDeadzone = 0.15f;
 
+    [SerializeField] private float  gravity = 9.81f;
+
+
     [Header("Camera settings")]
     [SerializeField] private Transform  cameraRoot = null,
                                         cameraRootReference = null,
@@ -118,7 +121,7 @@ public class PlayerControl : MonoBehaviour {
                                     + Quaternion.Euler(Vector3.up * 90) * this.MoveForward * this.input_horizontal;
             Vector3 targetPosition = this.characterController.transform.position + movementVector * this.CurrentMovementSpeed;
             targetPosition = Vector3.SmoothDamp(this.characterController.transform.position, targetPosition, ref this.movement, 1f, this.CurrentMovementSpeed, Time.fixedDeltaTime);
-            this.characterController.Move(targetPosition - this.characterController.transform.position);
+            this.characterController.Move(-this.characterController.transform.up * Time.fixedDeltaTime * this.gravity + targetPosition - this.characterController.transform.position);
 
             this.animator.SetBool(this.anim_isWalkingID, movementVector.magnitude > 0);
             this.animator.SetFloat(this.anim_movementSpeed, Mathf.Lerp(this.minMovementAnimSpeed, this.maxMovementAnimSpeed, movementVector.magnitude));
@@ -220,7 +223,7 @@ public class PlayerControl : MonoBehaviour {
         float t = duration - windup;
 
         Vector3 posWas = this.characterController.transform.position;
-        this.characterController.Move(direction * distance);
+        this.characterController.Move(-this.characterController.transform.up * Time.fixedDeltaTime * this.gravity + direction * distance);
         Vector3 targetPos = this.characterController.transform.position;
         this.characterController.transform.position = posWas;
 
@@ -228,7 +231,7 @@ public class PlayerControl : MonoBehaviour {
             if(t <= 0){ break; }
             // || Vector3.Distance(this.characterController.transform.position, targetPos) < 0.015f
 
-            this.characterController.Move(Vector3.SmoothDamp(this.characterController.transform.position, targetPos, ref this.movement, 1f, this.dodgeSpeed, Time.fixedDeltaTime) - this.characterController.transform.position);
+            this.characterController.Move(-this.characterController.transform.up * Time.fixedDeltaTime * this.gravity + Vector3.SmoothDamp(this.characterController.transform.position, targetPos, ref this.movement, 1f, this.dodgeSpeed, Time.fixedDeltaTime) - this.characterController.transform.position);
 
             yield return wait;
             t -= Time.fixedDeltaTime;
