@@ -11,7 +11,8 @@ public class PlayerControl : MonoBehaviour {
     [SerializeField] private Animator animator = null;
     [SerializeField] private new CharacterController camera = null;
     [SerializeField] private float  movementSpeed = 2f,
-                                    dodgeSpeed = 3f;
+                                    dodgeSpeed = 3f,
+                                    dodgeDistance = 3f;
 
     [SerializeField] private float  movementDeadzone = 0.15f,
                                     cameraDeadzone = 0.15f;
@@ -200,7 +201,7 @@ public class PlayerControl : MonoBehaviour {
             if(this.movement.magnitude > 0.5f * Time.fixedDeltaTime){
                 direction = this.movement.normalized;
             }
-            StartCoroutine(DodgeCoroutine(direction));
+            StartCoroutine(DodgeCoroutine(direction, this.dodgeDistance));
         }
     }
 
