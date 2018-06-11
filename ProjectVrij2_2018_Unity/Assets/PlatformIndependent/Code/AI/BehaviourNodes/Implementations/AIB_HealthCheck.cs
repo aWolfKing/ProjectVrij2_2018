@@ -17,6 +17,7 @@ public class AIB_HealthCheck : MonobehaviourAIBehaviourNode {
                 yield return this.ambushZoneTestNode.ExecuteNode(caller);
             }
             else{
+                MonoBehaviour.print("Run away");
                 yield return this.moveAwayFromPlayerNode.ExecuteNode(caller);
             }
         }

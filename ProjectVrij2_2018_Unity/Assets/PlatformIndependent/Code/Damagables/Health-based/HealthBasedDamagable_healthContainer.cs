@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class HealthBasedDamagable_healthContainer : MonoBehaviour {
 
-    [SerializeField] private float health = 100;
-    [SerializeField] private float maxHealth = 100;
+    [SerializeField] protected float health = 100;
+    [SerializeField] protected float maxHealth = 100;
 
-    [SerializeField] private UnityEngine.Events.UnityEvent onDeath = new UnityEngine.Events.UnityEvent();
+    [SerializeField] protected UnityEngine.Events.UnityEvent onDeath = new UnityEngine.Events.UnityEvent();
+    protected bool didDie = false;
 
 
     public float CurrentHealth{
@@ -23,11 +24,12 @@ public class HealthBasedDamagable_healthContainer : MonoBehaviour {
     }
 
 
-    public void TakeDamage(float amount){
+    public virtual void TakeDamage(float amount){
         if(this.health > 0){ 
             this.health -= amount;
         }
-        if(this.health <= 0){
+        if(this.health <= 0 && !this.didDie){
+            this.didDie = true;
             this.onDeath.Invoke();
         }
     }
