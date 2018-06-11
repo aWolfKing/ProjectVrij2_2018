@@ -23,7 +23,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap2:
-        m_Texture: {fileID: 2800000, guid: a666696f63d52f54791432b18a13ee8a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 70dcc55105e21fc4cbae45560df83ee0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap3:
@@ -55,8 +55,8 @@ Material:
         m_Scale: {x: 70, y: 70}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
-        m_Texture: {fileID: 2800000, guid: 47be2bd43550ae1488dc0be36f19d625, type: 3}
-        m_Scale: {x: 70, y: 70}
+        m_Texture: {fileID: 2800000, guid: 4a3fcdda91b4eff4b84476ba1d4b68c3, type: 3}
+        m_Scale: {x: 50, y: 50}
         m_Offset: {x: 0, y: 0}
     - _MainTex3:
         m_Texture: {fileID: 2800000, guid: 8de45899e8d0bd04f950f0a798775128, type: 3}
@@ -83,7 +83,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecTex2:
-        m_Texture: {fileID: 2800000, guid: 807e32410f9b8304aa1c8485932c8a7d, type: 3}
+        m_Texture: {fileID: 2800000, guid: d5a002a4441600d4faf1e412ed581758, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecTex3:
