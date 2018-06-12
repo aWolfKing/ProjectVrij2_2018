@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
+    private static Vector3 playerCharacterPos = Vector3.zero;
+    public static Vector3 CharacterPosition {
+        get{
+            return playerCharacterPos;
+        }
+    }
+
+    private static Camera playerCamera = null;
+    public static Camera Camera{
+        get{
+            return playerCamera;
+        }
+    }
+
+
     private string  inp_vertical = "Vertical",
                     inp_horizontal = "Horizontal";
 
@@ -62,7 +77,7 @@ public class PlayerControl : MonoBehaviour {
     [SerializeField] private Collider   hitbox_heavyAttack = null,
                                         hitbox_lightAttack = null,
                                         hitbox_interaction = null;
-    [SerializeField] Transform aimTarget = null;
+    //[SerializeField] Transform aimTarget = null;
 
 
 
@@ -101,6 +116,10 @@ public class PlayerControl : MonoBehaviour {
     }
 
 
+    private void Start() {
+        playerCamera = this.camera.GetComponent<Camera>();
+    }
+
 
     private void Update() {
         this.input_vertical = this.TestPassDeadzone(Input.GetAxis("LY"), this.movementDeadzone);
@@ -127,16 +146,18 @@ public class PlayerControl : MonoBehaviour {
             this.animator.SetBool(this.anim_isWalkingID, movementVector.magnitude > 0);
             this.animator.SetFloat(this.anim_movementSpeed, Mathf.Lerp(this.minMovementAnimSpeed, this.maxMovementAnimSpeed, movementVector.magnitude));
 
-            if(movementVector.magnitude > 0 || this.aimTarget != null){
-                if(this.aimTarget == null){ 
+            if(movementVector.magnitude > 0 || EnemyLockon.CurrentLockon != null){
+                if(EnemyLockon.CurrentLockon == null){ 
                     this.characterController.transform.rotation = Quaternion.Lerp(this.characterController.transform.rotation, Quaternion.LookRotation(movementVector.normalized, Vector3.up), Time.fixedDeltaTime * 3);
                 }
                 else{
-                    this.characterController.transform.rotation = Quaternion.Lerp(this.characterController.transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(this.aimTarget.position - this.characterController.transform.position, Vector3.up), Vector3.up), Time.fixedDeltaTime * 3);
+                    this.characterController.transform.rotation = Quaternion.Lerp(this.characterController.transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(EnemyLockon.CurrentLockon.transform.position - this.characterController.transform.position, Vector3.up), Vector3.up), Time.fixedDeltaTime * 3);
                 }
             }
 
         }
+
+        playerCharacterPos = this.characterController.transform.position;
 
     }
 
@@ -144,7 +165,15 @@ public class PlayerControl : MonoBehaviour {
 
     private void LateUpdate() {
 
-        this.cameraRoot.transform.Rotate(Vector3.up * this.input_cameraHorizontal * this.cameraSensitivity_Horizontal * -1 * Time.deltaTime, Space.World);
+        if(EnemyLockon.CurrentLockon == null){ 
+
+            this.cameraRoot.transform.Rotate(Vector3.up * this.input_cameraHorizontal * this.cameraSensitivity_Horizontal * -1 * Time.deltaTime, Space.World);
+
+        }
+        else{
+            this.cameraRoot.transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane((EnemyLockon.CurrentLockon.transform.position - this.cameraRoot.position).normalized, Vector3.up), Vector3.up);
+        }
+
 
         Vector3 cameraPosWas = this.camera.transform.position;
 
@@ -161,7 +190,18 @@ public class PlayerControl : MonoBehaviour {
 
         //Vector3 lookwasRot = this.camera.transform.rotation * Vector3.forward;
 
-        this.camera.transform.LookAt(this.cameraLookAt.position);
+        if(EnemyLockon.CurrentLockon == null){
+
+            Quaternion was = this.camera.transform.rotation;
+            this.camera.transform.LookAt(this.cameraLookAt.position);
+            this.camera.transform.rotation = Quaternion.Lerp(was, this.camera.transform.rotation, 0.4f);
+
+        }
+        else{
+            Quaternion was = this.camera.transform.rotation;
+            this.camera.transform.LookAt(EnemyLockon.CurrentLockon.transform.position);
+            this.camera.transform.rotation = Quaternion.Lerp(was, this.camera.transform.rotation, 0.4f);
+        }
 
         //Vector3 lookatRot = this.camera.transform.rotation * Vector3.forward;
 
@@ -354,6 +394,17 @@ public class PlayerControl : MonoBehaviour {
         Damager.Current = damager;
         HitboxString_basedDamagable.SendHit(this.hitbox_interaction);
         damager.ClearStoredDamage();
+    }
+
+
+
+    public void ToggleLockon(){
+        if(EnemyLockon.CurrentLockon != null){
+            EnemyLockon.ResetLockon();
+        }
+        else{
+            EnemyLockon.FindLockon(this.characterController.transform.position, Vector3.ProjectOnPlane(this.camera.transform.forward, Vector3.up));
+        }
     }
 
 }

@@ -936,6 +936,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1368974297771502
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4137665437125980}
+  - component: {fileID: 114460191717468340}
+  m_Layer: 9
+  m_Name: Lockon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1370748180052010
 GameObject:
   m_ObjectHideFlags: 1
@@ -2237,7 +2253,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1705023908050178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.56, y: 0.319, z: -7.08}
+  m_LocalPosition: {x: 46.76967, y: -0.39999998, z: 4.9446487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4099179285733920}
@@ -2275,6 +2291,7 @@ Transform:
   - {fileID: 4376432555226224}
   - {fileID: 4651665140111484}
   - {fileID: 4121259211994934}
+  - {fileID: 4137665437125980}
   m_Father: {fileID: 4079933246335010}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2374,6 +2391,19 @@ Transform:
   - {fileID: 4976500074716192}
   m_Father: {fileID: 4413093769049622}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4137665437125980
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368974297771502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4099179285733920}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4140756057085168
 Transform:
@@ -4096,7 +4126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8ae788b67ba7440ad32238953f3ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
   transformToRotate: {fileID: 224472707972852634}
 --- !u!114 &114024593775580650
 MonoBehaviour:
@@ -4495,6 +4524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca313f2b2c8bc24a9e8d20d0e512ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateRadius: 15
+  tPose: {fileID: 1278258107911292}
   animator: {fileID: 95953429284493766}
   navMeshAgent: {fileID: 195607856952486634}
   toEnable:
@@ -4613,6 +4644,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point0: {fileID: 4070808402323842}
   point1: {fileID: 4775686848595420}
+--- !u!114 &114460191717468340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368974297771502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b68de5829ba88b4ab67143da12d91a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canLockon: 1
+  shared_lockonAngle: 40
 --- !u!114 &114513346025382394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4777,7 +4821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca31f039473f36241aeaa4b829b4ed47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runFrom: {fileID: 0}
   attackNode: {fileID: 114726652255397398}
   shriekNode: {fileID: 114051081964593378}
   navMeshAgent: {fileID: 195607856952486634}
@@ -4836,7 +4879,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aIController: {fileID: 114895941848399388}
-  target: {fileID: 0}
   navMeshAgent: {fileID: 195607856952486634}
   targetPosDist: 0.8
   targetAttackDist: 1.4
@@ -4899,7 +4941,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  animator: {fileID: 95953429284493766}
+  aIController: {fileID: 114895941848399388}
 --- !u!114 &114809523631284408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4964,7 +5006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef92ca504425664e8da0b0e7d95ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   animator: {fileID: 95953429284493766}
   damage_heavyAttack: 50
   damage_lightAttack: 20
