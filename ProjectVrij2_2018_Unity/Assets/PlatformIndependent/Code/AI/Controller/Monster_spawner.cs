@@ -39,6 +39,7 @@ public class Monster_spawner : MonoBehaviour {
             }
         }
         while(true);
+        this.tPose.transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane((PlayerControl.CharacterPosition - this.tPose.transform.position), Vector3.up), Vector3.up);
         this.tPose.SetActive(true);
         this.animator.Play("Spawn");
         yield return new WaitForSeconds(4.4f);
