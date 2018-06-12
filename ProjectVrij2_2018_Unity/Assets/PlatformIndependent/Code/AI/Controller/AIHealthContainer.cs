@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class AIHealthContainer : HealthBasedDamagable_healthContainer{
 
-    [SerializeField] private Animator animator = null;
+    //[SerializeField] private Animator animator = null;
+    [SerializeField] private AIController aIController = null;
 
 
 
@@ -13,7 +14,8 @@ public class AIHealthContainer : HealthBasedDamagable_healthContainer{
         if(this.health > 0) {
             this.health -= amount;
             if(amount > 40 && this.health > 0){
-                this.animator.Play("Stun");
+                //this.animator.Play("Stun");
+                this.aIController.Stun();
             }
         }
         if(this.health <= 0 && !this.didDie) {

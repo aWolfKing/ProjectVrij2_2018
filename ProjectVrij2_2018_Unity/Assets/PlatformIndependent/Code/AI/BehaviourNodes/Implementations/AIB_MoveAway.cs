@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class AIB_MoveAway : MonobehaviourAIBehaviourNode {
 
-    [SerializeField] private Transform runFrom = null;
+    //[SerializeField] private Transform runFrom = null;
     [SerializeField] private MonobehaviourAIBehaviourNode attackNode = null;
     [SerializeField] private MonobehaviourAIBehaviourNode shriekNode = null;
     [SerializeField] private NavMeshAgent navMeshAgent = null;
@@ -36,7 +36,7 @@ public class AIB_MoveAway : MonobehaviourAIBehaviourNode {
             }
             */
 
-            Vector3 positionToRunTo = (this.navMeshAgent.transform.position - this.runFrom.position).normalized * (this.moveAwayDist + this.moveAwayPosRadius);
+            Vector3 positionToRunTo = (this.navMeshAgent.transform.position - /*this.runFrom.position*/ PlayerControl.CharacterPosition).normalized * (this.moveAwayDist + this.moveAwayPosRadius);
             NavMeshHit navMeshHit;
             if(NavMesh.SamplePosition(positionToRunTo, out navMeshHit, this.moveAwayPosRadius, 1 << NavMesh.GetAreaFromName("Walkable"))){
                 canMoveAway = true;
@@ -64,7 +64,7 @@ public class AIB_MoveAway : MonobehaviourAIBehaviourNode {
 
 
     private float CheckDistanceToPlayer(){
-        return Vector3.Distance(this.runFrom.position, this.navMeshAgent.transform.position);
+        return Vector3.Distance(/*this.runFrom.position*/ PlayerControl.CharacterPosition, this.navMeshAgent.transform.position);
     }
 
     private bool CanMoveAway(){

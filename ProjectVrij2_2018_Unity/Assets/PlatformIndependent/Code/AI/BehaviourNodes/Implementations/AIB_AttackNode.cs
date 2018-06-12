@@ -8,7 +8,7 @@ public class AIB_AttackNode : MonobehaviourAIBehaviourNode {
 
     [SerializeField] private AIController aIController = null;
 
-    [SerializeField] private Transform target = null;
+    //[SerializeField] private Transform target = null;
     [SerializeField] private NavMeshAgent navMeshAgent = null;
     [SerializeField] private float  targetPosDist = 0.5f,
                                     targetAttackDist = 1f,
@@ -24,12 +24,12 @@ public class AIB_AttackNode : MonobehaviourAIBehaviourNode {
         System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
         stopwatch.Start();
         do {
-            if(NavMesh.SamplePosition(this.target.position + (this.navMeshAgent.transform.position - this.target.position).normalized, out navMeshHit, this.targetPosDist, 1 << NavMesh.GetAreaFromName("Walkable"))) {
+            if(NavMesh.SamplePosition(/*this.target.position*/ PlayerControl.CharacterPosition + (this.navMeshAgent.transform.position - /*this.target.position*/ PlayerControl.CharacterPosition).normalized, out navMeshHit, this.targetPosDist, 1 << NavMesh.GetAreaFromName("Walkable"))) {
                 this.navMeshAgent.SetDestination(navMeshHit.position);
             }
             //time += 1f/30f;
             yield return wait;
-            float dist = Vector3.Distance(this.target.position, this.navMeshAgent.transform.position);
+            float dist = Vector3.Distance(/*this.target.position*/ PlayerControl.CharacterPosition, this.navMeshAgent.transform.position);
             if(dist <= this.targetAttackDist){
                 this.navMeshAgent.SetDestination(this.navMeshAgent.transform.position);
                 yield return this.aIController.MeleeAttack();

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour {
 
-    [SerializeField] private Transform target = null;
+    //[SerializeField] private Transform target = null;
     [SerializeField] private Animator animator = null;
     private int anim_heavyAttack = 0,
                 anim_lightAttack = 0;
@@ -18,6 +18,9 @@ public class AIController : MonoBehaviour {
     [SerializeField] private float projectileSpeed = 9;
 
     private Collider hitbox_projectileAttack = null;
+
+    private bool isStunned = false;
+
 
 
     private void Awake() {
@@ -43,12 +46,18 @@ public class AIController : MonoBehaviour {
 
         var fixedWait = new WaitForFixedUpdate();
 
+        if(this.isStunned){
+            yield break;
+        }
 
         float w = 0;
         do {
-            this.animator.transform.rotation = Quaternion.RotateTowards(this.animator.transform.rotation, Quaternion.LookRotation((this.target.position - this.animator.transform.position).normalized, Vector3.up), 360 * Time.fixedDeltaTime);
+            this.animator.transform.rotation = Quaternion.RotateTowards(this.animator.transform.rotation, Quaternion.LookRotation((/*this.target.position*/ PlayerControl.CharacterPosition - this.animator.transform.position).normalized, Vector3.up), 360 * Time.fixedDeltaTime);
             yield return fixedWait;
             w += Time.fixedDeltaTime;
+            if(this.isStunned){
+                yield break;
+            }
         }
         while(w < windup);
 
@@ -65,6 +74,10 @@ public class AIController : MonoBehaviour {
 
             yield return new WaitForFixedUpdate();
             t -= Time.fixedDeltaTime;
+
+            if(this.isStunned) {
+                yield break;
+            }
         }
         while(true);
 
@@ -79,18 +92,28 @@ public class AIController : MonoBehaviour {
         float windup = 1.7f;
         float endLag = 1.35f;
 
+        if(this.isStunned){
+            yield break;
+        }
+
         this.animator.Play(this.anim_heavyAttack);
 
         //yield return new WaitForSeconds(windup);
 
         var fixedWait = new WaitForFixedUpdate();
 
+        if(this.isStunned){
+            yield break;
+        }
 
         float w = 0;
         do {
-            this.animator.transform.rotation = Quaternion.RotateTowards(this.animator.transform.rotation, Quaternion.LookRotation((this.target.position - this.animator.transform.position).normalized, Vector3.up), 360 * Time.fixedDeltaTime);
+            this.animator.transform.rotation = Quaternion.RotateTowards(this.animator.transform.rotation, Quaternion.LookRotation((/*this.target.position*/ PlayerControl.CharacterPosition - this.animator.transform.position).normalized, Vector3.up), 360 * Time.fixedDeltaTime);
             yield return fixedWait;
             w += Time.fixedDeltaTime;
+            if(this.isStunned){
+                yield break;
+            }
         }
         while(w < windup);
 
@@ -116,6 +139,10 @@ public class AIController : MonoBehaviour {
 
             yield return new WaitForFixedUpdate();
             t -= Time.fixedDeltaTime;
+
+            if(this.isStunned){
+                yield break;
+            }
         }
         while(true);
 
@@ -125,6 +152,21 @@ public class AIController : MonoBehaviour {
         yield return new WaitForSeconds(endLag);
         Destroy(projectile);
 
+    }
+
+
+
+    public void Stun(){
+        StartCoroutine(StunCoroutine());
+    }
+
+    private IEnumerator StunCoroutine(){
+        if(!this.isStunned){ 
+            this.isStunned = true;
+            this.animator.Play("Stun");
+            yield return new WaitForSeconds(5f);
+            this.isStunned = false;
+        }
     }
 
 }
