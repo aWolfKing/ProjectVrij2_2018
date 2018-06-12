@@ -11,9 +11,10 @@ public class AIB_HealthCheck : MonobehaviourAIBehaviourNode {
                                                             moveAwayFromPlayerNode = null;
 
     public override IEnumerator ExecuteNode(MonobehaviourAIBehaviourGraph caller) {
+
         if(this.healthContainer.CurrentHealth > 0){
             ///> 15% health
-            if(1f/this.healthContainer.MaxHealth*this.healthContainer.CurrentHealth >= 0.15){
+            if(1f/this.healthContainer.MaxHealth*this.healthContainer.CurrentHealth >= /*0.15f*/ 0.25f){
                 yield return this.ambushZoneTestNode.ExecuteNode(caller);
             }
             else{

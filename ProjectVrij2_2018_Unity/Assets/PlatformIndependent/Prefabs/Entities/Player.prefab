@@ -2717,7 +2717,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1405950292930480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 296.89606, y: 308.08914, z: -254.38634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4468273379356000}
@@ -4514,7 +4514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae676eeaed334444ca8b8d70cdd85f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeathScene: mainMenu
+  onDeathScene: MainMenu
   animator: {fileID: 95281024543643252}
   toDisable:
   - {fileID: 1178245283639830}

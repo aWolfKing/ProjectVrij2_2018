@@ -30315,7 +30315,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1763993551381058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 279.11942, y: 369.4644, z: -107.83923}
+  m_LocalPosition: {x: 279.11942, y: 369.4644, z: -101.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4040213836156182}
@@ -31824,7 +31824,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370203763946656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 287.44202, y: 369.4644, z: -88.85209}
+  m_LocalPosition: {x: 287.44202, y: 369.4644, z: -90.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4666024776504814}
@@ -41381,9 +41381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95401342665732396}
   attackNode: {fileID: 114816229972326374}
   navMeshAgent: {fileID: 195101673307528792}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114038661725716126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41810,9 +41810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95586769850589408}
   attackNode: {fileID: 114964689002703214}
   navMeshAgent: {fileID: 195522817639493664}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114080125880457968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -42031,7 +42031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114793182766294326}
+  healthContainer: {fileID: 114765077150600958}
   ambushZoneTestNode: {fileID: 114048358546391282}
   moveAwayFromPlayerNode: {fileID: 114595466918136290}
 --- !u!114 &114118531716829846
@@ -42258,9 +42258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95253751469729486}
   attackNode: {fileID: 114616961381188300}
   navMeshAgent: {fileID: 195581326465805640}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114138224802015916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43373,7 +43373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114150570907567752}
+  healthContainer: {fileID: 114277454635845790}
   ambushZoneTestNode: {fileID: 114477647329333336}
   moveAwayFromPlayerNode: {fileID: 114353775548565532}
 --- !u!114 &114258024651688668
@@ -44783,9 +44783,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95805400748935952}
   attackNode: {fileID: 114374161644507830}
   navMeshAgent: {fileID: 195681647758238890}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114419552362564566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -45073,9 +45073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95803504555583118}
   attackNode: {fileID: 114472632747039406}
   navMeshAgent: {fileID: 195749626558746298}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114446429715219718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -45745,9 +45745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95346914227010496}
   attackNode: {fileID: 114826868984089294}
   navMeshAgent: {fileID: 195196610165044906}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114519910229187724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46132,7 +46132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114211668463043382}
+  healthContainer: {fileID: 114356218811649478}
   ambushZoneTestNode: {fileID: 114324968444067948}
   moveAwayFromPlayerNode: {fileID: 114958564775540878}
 --- !u!114 &114557373274184282
@@ -46173,7 +46173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114174231199922386}
+  healthContainer: {fileID: 114131277180942268}
   ambushZoneTestNode: {fileID: 114813545108458588}
   moveAwayFromPlayerNode: {fileID: 114186106750802006}
 --- !u!114 &114561315359822986
@@ -46239,7 +46239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114935412921130340}
+  healthContainer: {fileID: 114070687370696802}
   ambushZoneTestNode: {fileID: 114748067245826982}
   moveAwayFromPlayerNode: {fileID: 114408802079890976}
 --- !u!114 &114569707783281290
@@ -46520,7 +46520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114625304540264042}
+  healthContainer: {fileID: 114579850297592252}
   ambushZoneTestNode: {fileID: 114586300281384548}
   moveAwayFromPlayerNode: {fileID: 114241986826611420}
 --- !u!114 &114583391823740324
@@ -46851,9 +46851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   attackNode: {fileID: 114337135828348536}
   navMeshAgent: {fileID: 195098913172856862}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114623318511931596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -47321,7 +47321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114678273690226490}
+  healthContainer: {fileID: 114451118474326242}
   ambushZoneTestNode: {fileID: 114650314679957146}
   moveAwayFromPlayerNode: {fileID: 114879546114025058}
 --- !u!114 &114652846844477486
@@ -47565,9 +47565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95141373934054282}
   attackNode: {fileID: 114047578403263960}
   navMeshAgent: {fileID: 195934052646476162}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114703498537955218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -48035,7 +48035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114202979633187334}
+  healthContainer: {fileID: 114933847290395328}
   ambushZoneTestNode: {fileID: 114281335041212418}
   moveAwayFromPlayerNode: {fileID: 114135292734091104}
 --- !u!114 &114764278300763638
@@ -48177,9 +48177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95130477884927476}
   attackNode: {fileID: 114395931213879818}
   navMeshAgent: {fileID: 195231198431829602}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114778937621873196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49088,9 +49088,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1388c52a972e7b24fbf2af5469225464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   attackNode: {fileID: 114371201982430850}
   navMeshAgent: {fileID: 195036289485429368}
-  shriekPosition: {fileID: 0}
 --- !u!114 &114863274552602636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49671,7 +49671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114462481460892352}
+  healthContainer: {fileID: 114458776648727560}
   ambushZoneTestNode: {fileID: 114860938822042304}
   moveAwayFromPlayerNode: {fileID: 114451735312343432}
 --- !u!114 &114929091221777178
@@ -50038,7 +50038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427ef2ecd8f4e74c922479bcdf13715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthContainer: {fileID: 114569707783281290}
+  healthContainer: {fileID: 114924149068912620}
   ambushZoneTestNode: {fileID: 114677518555783514}
   moveAwayFromPlayerNode: {fileID: 114827367901739604}
 --- !u!114 &114958564775540878

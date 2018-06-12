@@ -64,7 +64,8 @@ public class AIB_MoveAway : MonobehaviourAIBehaviourNode {
 
 
     private float CheckDistanceToPlayer(){
-        return Vector3.Distance(/*this.runFrom.position*/ PlayerControl.CharacterPosition, this.navMeshAgent.transform.position);
+        return Vector3.Distance(/*this.runFrom.position*/ PlayerControl.CharacterPosition, this.navMeshAgent.transform.position)
+        ;
     }
 
     private bool CanMoveAway(){
